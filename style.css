@@ -1,0 +1,200 @@
+:root { 
+        --temp-column: 1;
+        --temp-row: 1;
+        --font-family: monospace;
+        --color-blue: rgb(81, 200, 230);
+        --color-yellow: rgb(247, 228, 57);
+        --color-purple: rgb(178, 141, 199);
+        --color-beige: rgb(255, 235, 197);
+        --color-brown: rgb(78, 39, 2);
+        --color-pink: rgb(247, 167, 180);
+        --color-red: rgb(209, 78, 78);
+        --shadow: rgba(0, 0, 0, 0.1);
+    }
+
+body {
+    background-color: var(--color-blue);
+    font-family: var(--font-family);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+h1 {
+    color: var(--color-yellow);
+    text-align: center;
+    font-size: 2rem;
+    padding: 0;
+    margin: 0;
+}
+
+#content {
+    display: flex;
+    width: 450px;
+    justify-content: center;
+    align-items: center;
+}
+
+#player1, #player2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#player1 {
+    padding-right: 3rem;
+}
+
+#player2 {
+    padding-left: 3rem;
+}
+
+h2 {
+    font-size: 1rem;
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 25px;
+    color: var(--color-brown);
+}
+
+span {
+    font-size: 0.75rem;
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    color: var(--color-brown);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#player1 h2 {
+    background-color: var(--color-red);
+}
+
+#player2 h2 {
+    background-color: white;
+}
+
+#player1 span {
+    background-color: var(--color-red);
+}
+
+#player2 span {
+    background-color: white;
+}
+
+p {
+    text-align: center;
+    font-size: 3rem;
+    background-color: var(--color-yellow);
+    color: var(--color-brown);
+    border-radius: 25px;
+    width: 100px;
+    height: 100%;
+}
+
+.gameboard {
+    width: 100%;
+    height: 100%;
+    display: flex; 
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+.boxes {
+    display: grid;
+    background-color: var(--color-purple);
+    width: 350px;
+    height: 350px;
+    border: 0.75rem solid var(--color-purple);
+    border-radius: 25px;
+    padding: 0;
+    margin: 1rem;
+    grid-template-columns: repeat(var(--temp-column), auto);
+    grid-template-rows: repeat(var(--temp-row), auto);
+    grid-gap: 0.75rem;
+}
+
+.box {
+    padding: 0;
+    margin: 0;
+    background-color: var(--color-beige);
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.box:hover {
+    box-shadow: 0.25rem 0.25rem var(--color-pink);
+}
+
+.fire {
+    background-color: var(--color-red);
+    color: var(--color-pink);
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.fire::before {
+    content: '火';
+    position: absolute;
+}
+
+.water {
+    background-color: white;
+    color: var(--color-blue);
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.water::before {
+    content: '水';
+    position: absolute;
+}
+
+.end-game-message {
+    display: none;
+    position: fixed;
+    top:200px;
+    bottom:0;
+    width: 400px;
+    height: 400px;
+    background-color:var(--color-yellow);
+    border-radius: 25px;
+    flex-direction: column;
+    color: var(--color-brown);
+}
+
+.end-game-message p {
+    width:100%;
+    font-size:2rem;
+    padding-top: 6rem;
+}
+
+.end-game-message button {
+    border: none;
+    background-color: var(--color-purple);
+    color: var(--color-beige);
+    border-radius: 0 0 24px 24px;
+    font-size: 1.5rem;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+}
+.end-game-message button:hover {
+    background-color: var(--color-blue);
+    color: var(--color-yellow);
+}
+
+.end-game-message.show {
+    display:flex;
+}
