@@ -59,6 +59,11 @@ h2 {
     color: var(--color-brown);
 }
 
+.short-text { 
+    display: none;
+    font-size:1.5rem;
+}
+
 span {
     font-size: 1.5rem;
     font-weight: bold;
@@ -103,6 +108,7 @@ span {
     display: flex; 
     justify-content: center;
     align-items: center;
+    margin-top: 1rem;
 }
 
 .boxes {
@@ -113,7 +119,6 @@ span {
     border: 0.75rem solid var(--color-purple);
     border-radius: 25px;
     padding: 0;
-    margin: 1rem;
     grid-template-columns: repeat(var(--temp-column), auto);
     grid-template-rows: repeat(var(--temp-row), auto); 
     grid-gap: 0.75rem;
@@ -142,7 +147,6 @@ span {
 .fire {
     background-color: var(--color-red);
     color: var(--color-pink);
-
 }
 
 .fire::after {
@@ -163,7 +167,7 @@ span {
 .end-round-message, .reload-game-message{
     display: none;
     position: fixed;
-    top:60px;
+    top:100px;
     bottom:0;
     width: 400px;
     height: 150px;
@@ -234,4 +238,108 @@ span {
 .winningCombo {
     background-color: var(--color-brown);
     color: var(--color-yellow);
+}
+
+@media only screen and (max-width: 400px) {
+    .boxes {
+        width: 250px;
+        height: 250px;
+    }
+
+    #content {
+        margin-top: 1rem;
+        width: 300px;
+    }
+
+    #player1 {
+        padding-right: 2rem;
+    }
+    
+    #player2 {
+        padding-left: 2rem;
+    }
+
+    h2 {
+        display: none;
+    }
+
+    .short-text {
+        display: inline-block;
+    }
+
+    #content p {
+        font-size: 2rem;
+    }
+
+    span {
+        font-size: 2rem;
+    }
+
+    .gameboard {
+        margin-top: 2rem;
+    }
+
+    .end-round-message, .reload-game-message{
+        top:125px;
+        width: 300px;
+        height: 120px;
+    }
+
+    #winning-text {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    .boxes {
+        width: 200px;
+        height: 200px;
+    }
+
+    #content {
+        margin-top:1rem;
+        width: 200px;
+    }
+
+    #player1 {
+        padding-right: 1rem;
+    }
+    
+    #player2 {
+        padding-left: 1rem;
+    }
+
+    h2 {
+        display: none;
+    }
+
+    .short-text {
+        display: inline-block;
+    }
+
+    #content p {
+        font-size: 2rem;
+    }
+
+    span {
+        font-size: 2rem;
+    }
+
+    .gameboard {
+        margin-top: 2rem;
+    }
+
+    .box {
+        font-size: 2rem;
+    }
+
+    .end-round-message, .reload-game-message{
+        top:105px;
+        width: 250px;
+        height: 120px;
+    }
+
 }
