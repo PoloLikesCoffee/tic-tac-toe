@@ -60,7 +60,8 @@ h2 {
 }
 
 span {
-    font-size: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: bold;
     width: 100%;
     height: 50px;
     border-radius: 25px;
@@ -86,7 +87,7 @@ span {
     background-color: white;
 }
 
-p {
+#content p {
     text-align: center;
     font-size: 3rem;
     background-color: var(--color-yellow);
@@ -101,7 +102,6 @@ p {
     height: 100%;
     display: flex; 
     justify-content: center;
-    flex-direction: row;
     align-items: center;
 }
 
@@ -115,7 +115,7 @@ p {
     padding: 0;
     margin: 1rem;
     grid-template-columns: repeat(var(--temp-column), auto);
-    grid-template-rows: repeat(var(--temp-row), auto);
+    grid-template-rows: repeat(var(--temp-row), auto); 
     grid-gap: 0.75rem;
 }
 
@@ -124,9 +124,10 @@ p {
     margin: 0;
     background-color: var(--color-beige);
     border-radius: 25px;
+    font-size: 3rem;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
     cursor: pointer;
 }
 
@@ -134,16 +135,17 @@ p {
     box-shadow: 0.25rem 0.25rem var(--color-pink);
 }
 
+.box.none {
+    pointer-events: none;
+}
+
 .fire {
     background-color: var(--color-red);
     color: var(--color-pink);
-    font-size: 3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
+
 }
 
-.fire::before {
+.fire::after {
     content: '火';
     position: absolute;
 }
@@ -151,50 +153,85 @@ p {
 .water {
     background-color: white;
     color: var(--color-blue);
-    font-size: 3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-.water::before {
+.water::after {
     content: '水';
     position: absolute;
 }
 
-.end-game-message {
+.end-round-message, .reload-game-message{
     display: none;
     position: fixed;
-    top:200px;
+    top:60px;
     bottom:0;
     width: 400px;
-    height: 400px;
-    background-color:var(--color-yellow);
+    height: 150px;
     border-radius: 25px;
     flex-direction: column;
+    align-items: center;
+}
+
+.end-round-message {
+    background-color:var(--color-yellow);
+}
+
+.reload-game-message {
+    background-color:var(--color-pink);    
+}
+
+#round-text, #winning-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width:100%;
+    font-size:1.5rem;
+}
+
+#round-text {
     color: var(--color-brown);
 }
 
-.end-game-message p {
-    width:100%;
-    font-size:2rem;
-    padding-top: 6rem;
+#winning-text {
+    color: white;
 }
 
-.end-game-message button {
+.end-round-message button, .reload-game-message button {
+    width: 100%;
+    height: 60px;
+    padding: 0;
     border: none;
-    background-color: var(--color-purple);
-    color: var(--color-beige);
     border-radius: 0 0 24px 24px;
     font-size: 1.5rem;
-    padding: 1rem 1.5rem;
     cursor: pointer;
 }
-.end-game-message button:hover {
+
+.end-round-message button {
+    background-color: var(--color-purple);
+    color: var(--color-beige);
+}
+
+.reload-game-message button {
+    background-color: var(--color-purple);
+    color: white;
+}
+
+.reload-game-message button:hover {
+    background-color: var(--color-red);
+    color: white;
+}
+
+.end-round-message button:hover {
     background-color: var(--color-blue);
     color: var(--color-yellow);
 }
 
-.end-game-message.show {
+.end-round-message.show, .reload-game-message.show {
     display:flex;
+}
+
+.winningCombo {
+    background-color: var(--color-brown);
+    color: var(--color-yellow);
 }

@@ -15,22 +15,27 @@
     <div id="content">
         <div id="player1">
             <h2>プレイヤー<br>1</h2>
-            <span id="span1"></span>
+            <span id="span1">0</span>
         </div>
         <p>
             VS
         </p>
         <div id="player2">
             <h2>プレイヤー<br>2</h2>
-            <span id="span2"></span>
+            <span id="span2">0</span>
         </div>
     </div>
     <div class="gameboard">
-        <div class="boxes"></div>
+        <div class="boxes">
+        </div>
     </div>
-    <div class="end-game-message">
+    <div class="end-round-message">
+        <p id="round-text"></p>
+        <button id="restart">次のラウンド</button>
+    </div>
+    <div class="reload-game-message">
         <p id="winning-text"></p>
-        <button id="restart">リトライ</button>
+        <button id="reload">リトライ</button>
     </div>
 </body>
 </html>
